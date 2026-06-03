@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0b0b0c; 
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    animation: fadeInPage 0.5s ease-out forwards;
+    opacity: 0;
+    overflow-x: hidden;
+}
+
+header {
+    margin-bottom: 6rem; 
+}
+
+.navbar {
+    display: flex;
+    background: #161618;
+    padding: 6px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #27272a;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #a1a1aa; 
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+}
+
+.nav-item i {
+    font-size: 0.85rem;
+}
+
+.nav-item:hover {
+    background: rgba(101, 0, 217, 0.85); 
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background: rgb(101, 0, 217);
+    color: #ffffff;
+}
+
+.main-container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.row-reverse h1, 
+.row-reverse h2, 
+.row-reverse .desc {
+    text-align: right;
+    margin-left: auto;
+}
+
+.row-reverse .skills-container {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.my-img {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.my-img img {
+    width: 280px;           
+    height: 280px;          
+    border-radius: 50%;     
+    object-fit: cover;      
+    border: 3px solid rgb(101, 0, 217); 
+    filter: drop-shadow(0 0 25px rgba(101, 0, 217, 0.4)); 
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    max-width: 500px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(101, 0, 217);
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+}
+
+.desc {
+    color: #a1a1aa;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;     
+    max-width: 500px;        
+    margin-bottom: 1.2rem;   
+}
+
+.cursor {
+    font-weight: 300;
+    color: rgb(101, 0, 217); 
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.skills-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    max-width: 500px;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(101, 0, 217, 0.1);
+    color: #c084fc;
+    border: 1px solid rgba(101, 0, 217, 0.3);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.projects-container, .contact-container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.center-text {
+    text-align: center !important;
+    margin-bottom: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+.project-card {
+    background: #161618;
+    border: 1px solid #27272a;
+    padding: 2rem;
+    border-radius: 16px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.project-card .desc {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(101, 0, 217);
+    box-shadow: 0 10px 30px rgba(101, 0, 217, 0.1);
+}
+
+.project-link {
+    color: rgb(101, 0, 217);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: #c084fc;
+}
+
+.contact-buttons-wrap {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    margin-top: 0;
+}
+
+.contact-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(101, 0, 217, 0.1);
+    color: #c084fc;
+    border: 1px solid rgba(101, 0, 217, 0.3);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s, border-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+.contact-tag:hover {
+    background: rgba(101, 0, 217, 0.25);
+    border-color: rgb(101, 0, 217);
+    color: #ffffff;
+}
+
+.contact-tag:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.exit-to-left {
+    animation: exitLeft 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+@keyframes exitLeft {
+    to {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+}
+
+body.exit-to-right {
+    animation: exitRight 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+@keyframes exitRight {
+    to {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column-reverse; 
+        gap: 2rem;
+        text-align: center;
+    }
+    .row-reverse {
+        flex-direction: column-reverse;
+    }
+    .row-reverse h1, 
+    .row-reverse h2, 
+    .row-reverse .desc {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .my-img {
+        justify-content: center;
+    }
+    .desc {
+        margin: 0 auto 1.2rem auto;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin: 0 auto 1rem auto;
+    }
+    h2 {
+        margin: 0 auto 1.5rem auto;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .skills-container, .row-reverse .skills-container {
+        justify-content: center;
+        margin: 1.5rem auto 0 auto;
+    }
+}
